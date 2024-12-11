@@ -1,0 +1,86 @@
+[gd_scene load_steps=12 format=3 uid="uid://cuuoft1rwar2c"]
+
+[ext_resource type="Texture2D" uid="uid://bjwejg60qdboi" path="res://assets/The Female Adventurer - Free/Idle/Idle.png" id="1_3fufg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6eo35"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(0, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb1ic"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(48, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8rewg"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(96, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ng3on"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(144, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_blf0n"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(192, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icr7x"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(240, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6u0c"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(288, 0, 48, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd3of"]
+atlas = ExtResource("1_3fufg")
+region = Rect2(336, 0, 48, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ylynb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6eo35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb1ic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8rewg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ng3on")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_blf0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icr7x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6u0c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dd3of")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r2ac3"]
+radius = 7.0
+height = 26.0
+
+[node name="jogador" type="CharacterBody2D"]
+
+[node name="animacao" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_ylynb")
+animation = &"idle"
+autoplay = "idle"
+frame = 7
+frame_progress = 1.0
+
+[node name="colisao" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("CapsuleShape2D_r2ac3")
